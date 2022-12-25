@@ -674,6 +674,7 @@ export default {
     },
     mounted() {},
     created() {
+        console.log("sendrequest");
         // 将参数拷贝进查询对象
         let query = this.$route.query;
         this.query = Object.assign(this.query, query);

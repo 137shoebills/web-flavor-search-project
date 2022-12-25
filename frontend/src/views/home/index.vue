@@ -89,7 +89,7 @@
             <el-main class="main">
 
                 <transition name="move" mode="out-in">
-                    <router-view></router-view>
+                    <router-view :key="$route.fullPath"></router-view>
                 </transition>
             </el-main>
         </el-container>

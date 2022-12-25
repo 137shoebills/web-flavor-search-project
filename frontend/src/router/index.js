@@ -15,14 +15,14 @@ import authAdmin from "../views/userManage/admin/authAdmin.vue";
 import authRole from "../views/userManage/admin/authRole.vue";
 import authPermissionRule from "../views/userManage/admin/authPermissionRule.vue";
 
-// 上传相关
-import tinymce from "../views/components/tinymce-demo.vue";
-import upload from "../views/components/upload-demo.vue";
-
-// 广告管理
-import adSite from "../views/adManage/adSite.vue";
-import ad from "../views/adManage/ad.vue";
-
+//UserFeature
+import userSetting from "../views/userFeature/userSetting/UserSetting.vue";
+import aList from "../views/userFeature/aList/AList.vue";
+import bList from "../views/userFeature/bList/BList.vue";
+import aFind from "../views/userFeature/aFind/AFind.vue";
+import aMore from "../views/userFeature/aMore/AMore.vue";
+import userInfo from "../views/userFeature/userSetting/UserInfo.vue";
+import checkMetric from "../views/adminFeature/CheckMetric.vue";
 // Vue.use(VueRouter);
 
 const err401 = r =>
@@ -68,16 +68,16 @@ export const constantRouterMap = [
     {
         path: "/",
         component: Home,
-        redirect: "/readme",
+        redirect: "/home",
         name: "首页",
         hidden: true
     },
     {
-        path: "/readme",
+        path: "/home",
         component: Home,
-        redirect: "/readme/main",
-        icon: "shouye",
-        name: "控制台",
+        redirect: "/home/main",
+        icon: "all",
+        name: "首页",
         noDropdown: true,
         children: [
             {
@@ -87,31 +87,82 @@ export const constantRouterMap = [
         ]
     },
     {
-        path: "/components",
-        redirect: "/components/uploadList",
+        path: "/settings",
         component: Home,
-        name: "components",
-        icon: "tongyong",
+        redirect: "/settings/user",
+        icon: "set",
+        name: "设置",
+        noDropdown: true,
         children: [
             {
-                path: "uploadList",
-                name: "上传图片的展示",
-                component: r =>
-                    require.ensure(
-                        [],
-                        () => r(require("../views/components/uploadList.vue")),
-                        "home"
-                    )
+                path: "user",
+                component: userSetting
+            }
+        ]
+    },
+    {
+        path: "/mypost",
+        component: Home,
+        redirect: "/mypost/mya",
+        icon: "form",
+        name: "我的帖子",
+        children: [
+            {
+                path: "mya",
+                name: "我的寻味道",
+                component: aList,
+                props: {
+                    fatherpath: "/mypost/mya",
+                    fatherRegion: "",
+                    fatherFlavor: []
+                }
             },
             {
-                path: "tinymce",
-                name: "tinymce富文本编辑器",
-                component: tinymce
-            },
+                path: "myb",
+                name: "我的请品鉴",
+                component: bList
+            }
+        ]
+    },
+    {
+        path: "/looka",
+        redirect: "/looka/detail",
+        component: Home,
+        hidden: true,
+        children: [
             {
-                path: "upload",
-                name: "上传的demo",
-                component: upload
+                path: "detail",
+                name: "寻味道详情",
+                component: aMore
+            }
+        ]
+        //hidden: true,
+    },
+    {
+        path: "/userinfo",
+        redirect: "/userinfo/detail",
+        component: Home,
+        hidden: true,
+        children: [
+            {
+                path: "detail",
+                name: "用户信息",
+                component: userInfo
+            }
+        ]
+    },
+    {
+        path: "/search",
+        component: Home,
+        redirect: "/search/fina",
+        icon: "search",
+        name: "查找",
+        noDropdown: true,
+        children: [
+            {
+                path: "finda",
+                name: "查找寻味道",
+                component: aFind
             }
         ]
     }
@@ -129,11 +180,12 @@ export const asyncRouterMap = [
         path: "/userManage",
         redirect: "/userManage/adminManage/index",
         component: Home,
-        icon: "guanliyuan1",
+        icon: "account",
         name: "用户管理",
         meta: {
             authRule: ["user_manage"]
         },
+        hidden: true,
         // noDropdown: true,
         children: [
             {
@@ -178,32 +230,23 @@ export const asyncRouterMap = [
         ]
     },
     {
-        path: "/adManage",
-        redirect: "/adManage/adSite",
+        path: "/userdata",
+        redirect: "/userdata/metric / histogram",
         component: Home,
-        icon: "guanggao",
-        name: "广告相关",
+        icon: "earth",
+        name: "用户数据",
         meta: {
-            // authRule: ["ad_manage"]
+            authRule: ["user_data"]
         },
         // noDropdown: true,
         children: [
             {
-                path: "adSite",
-                component: adSite,
-                name: "广告位管理",
+                path: "histogram",
+                component: checkMetric,
+                name: "折线图",
                 icon: "",
                 meta: {
-                    // authRule: ["admin/ad/site/index"]
-                }
-            },
-            {
-                path: "ad",
-                component: ad,
-                name: "广告管理",
-                icon: "",
-                meta: {
-                    // authRule: ["admin/ad/ad/index"]
+                    authRule: ["user_data/auth/admin/index"]
                 }
             }
         ]

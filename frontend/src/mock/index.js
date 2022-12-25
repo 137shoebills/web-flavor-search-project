@@ -13,6 +13,13 @@ import fileResourceTag from "./fileResourceTag";
 import fileResource from "./fileResource";
 import adSite from "./adSite";
 import ad from "./ad";
+import aList from "./user/aList";
+import bList from "./user/bList";
+import flavor from "./user/flavor";
+import regions from "./user/region";
+import aMore from "./user/aMore";
+import userInfo from "./user/userInfo";
+import matric from "./matric";
 
 // 登录相关
 Mock.mock(/\/admin\/auth\/login\/out/, "post", login.out);
@@ -88,5 +95,14 @@ Mock.mock(/\/admin\/ad\/ad\/index/, "get", ad.index);
 Mock.mock(/\/admin\/ad\/ad\/save/, "post", ad.save);
 Mock.mock(/\/admin\/ad\/ad\/edit/, "post", ad.edit);
 Mock.mock(/\/admin\/ad\/ad\/delete/, "post", ad.del);
+
+//用户功能
+Mock.mock(/\/user\/alist\/index/, "get", aList.index);
+Mock.mock(/\/user\/blist\/index/, "get", bList.index);
+Mock.mock(/\/user\/flavors\/index/, "get", flavor.index);
+Mock.mock(/\/user\/regions\/index/, "get", regions.index);
+Mock.mock(/\/user\/amore\/index/, "get", aMore.index);
+Mock.mock(/\/user\/userinfo\/index/, "get", userInfo.index);
+Mock.mock(/\/admin\/matric/, "get", matric.index);
 
 export default Mock;
