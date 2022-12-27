@@ -238,15 +238,22 @@ export const asyncRouterMap = [
         meta: {
             authRule: ["user_data"]
         },
-        // noDropdown: true,
+        //noDropdown: true,
         children: [
             {
                 path: "histogram",
                 component: checkMetric,
+<<<<<<< Updated upstream
                 name: "折线图",
                 icon: "",
                 meta: {
                     authRule: ["user_data/auth/admin/index"]
+=======
+                name: "图表",
+                icon: "",
+                meta: {
+                    authRule: ["user_data/auth/histogram/index"]
+>>>>>>> Stashed changes
                 }
             }
         ]

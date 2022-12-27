@@ -45,7 +45,11 @@
 export default {
     data() {
         return {
+<<<<<<< Updated upstream
             img: require("D:/coding/web-project/picture/BlankUserIcon.png")
+=======
+            img: require("C:/Javaworkspace/web-flavor-search-project/picture/BlankUserIcon.png")
+>>>>>>> Stashed changes
         };
     },
     name: "aMoreItem",

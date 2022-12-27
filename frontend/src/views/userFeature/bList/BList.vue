@@ -10,7 +10,11 @@
                 </li>
             </ul>
             <div class="next_button_container">
+<<<<<<< Updated upstream
                 <el-button v-if="nextButtonVis" @click.native="goToNext" class="blist_next_button">点击跳转下一页</el-button>
+=======
+                <el-button v-if="nextButtonVis" @click.native="goToNext" class="blist_next_button">下一页</el-button>
+>>>>>>> Stashed changes
             </div>
         </div>
 

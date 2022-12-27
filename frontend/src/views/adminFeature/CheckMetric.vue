@@ -21,11 +21,42 @@
                 <el-button type="primary" round @click="SubmitQuery" class="alist_next_button">确认</el-button>
             </div>
         </div>
+<<<<<<< Updated upstream
 
         <div>
             <div id="echart_etl_stat" style="height: 400px; width: 100%;"></div>
         </div>
 
+=======
+        
+        <div>
+            <div id="echart_etl_stat" style="height: 400px; width: 100%;"></div>
+        </div>
+        <el-table
+            :data="tableData"
+            style="width: 100%"
+            :default-sort = "{prop: 'date', order: 'descending'}"
+        >
+            <el-table-column
+                prop="date"
+                label="日期"
+                sortable
+                width="180">
+            </el-table-column>
+            <el-table-column
+                prop="region"
+                label="地区"
+                sortable
+                width="180">
+            </el-table-column>
+            <el-table-column
+                prop="price"
+                label="成交金额"
+                sortable
+                width="180">
+            </el-table-column>
+        </el-table>
+>>>>>>> Stashed changes
     </div>
 </template>
 
@@ -36,6 +67,58 @@ import { getMatric } from "../../api/admin/matric";
 export default {
     data() {
         return {
+<<<<<<< Updated upstream
+=======
+            tableData: [{
+                date: '2022年01月',
+                region: '北京 北京市 朝阳区',
+                price: 0
+                }, {
+                date: '2022年02月',
+                region: '北京 北京市 朝阳区',
+                price: 51
+                }, {
+                date: '2022年03月',
+                region: '北京 北京市 朝阳区',
+                price: 22
+                }, {
+                date: '2022年04月',
+                region: '北京 北京市 朝阳区',
+                price: 11
+                }, {
+                date: '2022年05月',
+                region: '北京 北京市 朝阳区',
+                price: 50
+                }, {
+                date: '2022年06月',
+                region: '北京 北京市 朝阳区',
+                price: 0
+                }, {
+                date: '2022年07月',
+                region: '北京 北京市 朝阳区',
+                price: 38
+                }, {
+                date: '2022年08月',
+                region: '北京 北京市 朝阳区',
+                price: 47
+                }, {
+                date: '2022年09月',
+                region: '北京 北京市 朝阳区',
+                price: 0
+                }, {
+                date: '2022年10月',
+                region: '北京 北京市 朝阳区',
+                price: 10
+                }, {
+                date: '2022年11月',
+                region: '北京 北京市 朝阳区',
+                price: 100
+                }, {
+                date: '2022年12月',
+                region: '北京 北京市 朝阳区',
+                price: 0
+                }],
+>>>>>>> Stashed changes
             query: {
                 RequestUserID: 0,
                 Grain: "月",

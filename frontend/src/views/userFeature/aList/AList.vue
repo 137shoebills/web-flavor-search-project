@@ -9,9 +9,22 @@
                 v-bind:item="item">
                 </li>
             </ul>
+<<<<<<< Updated upstream
             <div class="next_button_container">
                 <el-button v-if="nextButtonVis" @click.native="goToNext" class="blist_next_button">点击跳转下一页</el-button>
             </div>
+=======
+            <div class="block">
+                <el-pagination
+                    @current-change="goToPage"
+                    :current-page.sync="page"
+                    layout="pager"
+                    :page-size.sync="limit"
+                    :total="500">
+                </el-pagination>
+            </div>
+            
+>>>>>>> Stashed changes
         </div>
 
         <el-button v-if="total==0&&!loading" class="alist_no_item">
@@ -23,6 +36,10 @@
 
 
 <script>
+<<<<<<< Updated upstream
+=======
+import { matrix } from "echarts";
+>>>>>>> Stashed changes
 import { getaList } from "../../../api/user/aList";
 import AListItem from "./AListItem";
 const aListItemJson = {
@@ -55,6 +72,7 @@ export default {
                 RequestUserID: 0,
                 region: "",
                 flavor: "",
+<<<<<<< Updated upstream
                 page: 1,
                 limit: 10
             },
@@ -62,6 +80,15 @@ export default {
             total: 0,
             loading: true,
             nextButtonVis: true
+=======
+                page: 1//第几页
+            },
+            limit: 10,//每页几条
+            list: [],
+            total: 2,
+            loading: true,
+            showPage : true
+>>>>>>> Stashed changes
         };
     },
     methods: {
@@ -82,11 +109,25 @@ export default {
                     this.total = 0;
                 });
         },
+<<<<<<< Updated upstream
         goToNext() {
             this.$router.push({
                 path: this.fatherpath,
                 query: { page: this.query.page + 1 }
             });
+=======
+        goToPage(val) {
+            this.query.page=val;
+            this.$router.push({
+                path: this.fatherpath,
+                query: {page: this.query.page}
+            })
+            this.showPage = false;
+            this.$nextTick(()=>{
+                this.showPage = true;
+            })
+            this.getList();
+>>>>>>> Stashed changes
         }
     },
     components: {
@@ -102,7 +143,11 @@ export default {
         this.query.UserID = 0;
         this.query.region = "";
         this.query.flavor = "";
+<<<<<<< Updated upstream
         this.query.limit = parseInt(this.query.limit);
+=======
+        this.limit = parseInt(this.limit);
+>>>>>>> Stashed changes
         this.query.page = parseInt(this.query.page);
         // 加载列表数据
         this.getList();

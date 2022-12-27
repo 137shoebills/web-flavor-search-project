@@ -38,7 +38,11 @@ export default {
                 UserID: 0,
                 RequestUserID: 0
             },
+<<<<<<< Updated upstream
             UserIconPath: require("D:/coding/web-project/picture/BlankUserIcon.png"),
+=======
+            UserIconPath: require("C:/Javaworkspace/web-flavor-search-project/picture/BlankUserIcon.png"),
+>>>>>>> Stashed changes
             list: [],
             total: 0,
             loading: true

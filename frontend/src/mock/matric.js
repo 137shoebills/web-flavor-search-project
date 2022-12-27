@@ -1,6 +1,10 @@
 const index = {
     data: {
         total: 1,
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
         list: [
             {
                 datax: [

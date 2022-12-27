@@ -50,7 +50,11 @@
 export default {
     data() {
         return {
+<<<<<<< Updated upstream
             img: require("D:/coding/web-project/picture/BlankUserIcon.png")
+=======
+            img: require("C:/Javaworkspace/web-flavor-search-project/picture/BlankUserIcon.png")
+>>>>>>> Stashed changes
         };
     },
     name: "bMoreItem",
@@ -89,7 +93,11 @@ export default {
                 .catch(() => {
                     this.$message({
                         type: "info",
+<<<<<<< Updated upstream
                         message: "已取消xuanze"
+=======
+                        message: "已取消选择"
+>>>>>>> Stashed changes
                     });
                 });
         },

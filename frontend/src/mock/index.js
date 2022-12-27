@@ -11,8 +11,11 @@ import authRole from "./authRole";
 import upload from "./upload";
 import fileResourceTag from "./fileResourceTag";
 import fileResource from "./fileResource";
+<<<<<<< Updated upstream
 import adSite from "./adSite";
 import ad from "./ad";
+=======
+>>>>>>> Stashed changes
 import aList from "./user/aList";
 import bList from "./user/bList";
 import flavor from "./user/flavor";
@@ -84,17 +87,14 @@ Mock.mock(/admin\/file\/resource\/index/, "get", fileResource.index);
 // 上传资源
 Mock.mock(/admin\/file\/resource\/add/, "post", fileResource.add);
 
-// 广告位相关
-Mock.mock(/\/admin\/ad\/site\/index/, "get", adSite.index);
-Mock.mock(/\/admin\/ad\/site\/adList/, "post", adSite.adList);
-Mock.mock(/\/admin\/ad\/site\/save/, "post", adSite.save);
-Mock.mock(/\/admin\/ad\/site\/edit/, "post", adSite.edit);
-Mock.mock(/\/admin\/ad\/site\/delete/, "post", adSite.del);
-// 广告相关
-Mock.mock(/\/admin\/ad\/ad\/index/, "get", ad.index);
-Mock.mock(/\/admin\/ad\/ad\/save/, "post", ad.save);
-Mock.mock(/\/admin\/ad\/ad\/edit/, "post", ad.edit);
-Mock.mock(/\/admin\/ad\/ad\/delete/, "post", ad.del);
+//用户功能
+Mock.mock(/\/user\/alist\/index/, "get", aList.index);
+Mock.mock(/\/user\/blist\/index/, "get", bList.index);
+Mock.mock(/\/user\/flavors\/index/, "get", flavor.index);
+Mock.mock(/\/user\/regions\/index/, "get", regions.index);
+Mock.mock(/\/user\/amore\/index/, "get", aMore.index);
+Mock.mock(/\/user\/userinfo\/index/, "get", userInfo.index);
+Mock.mock(/\/admin\/matric/, "get", matric.index);
 
 //用户功能
 Mock.mock(/\/user\/alist\/index/, "get", aList.index);
